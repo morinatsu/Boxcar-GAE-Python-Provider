@@ -65,7 +65,7 @@ class BoxcarApi(object):
         @return: bool
         """
         _result = self._http_post("notifications/subscribe",
-                                {"email": md5(email).hexdigest()})
+                                {"email": email})
         if (_result.status_code == 404):
             raise BoxcarException("User not found %d" % _result.status_code)
         else:

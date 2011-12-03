@@ -46,7 +46,7 @@ class TestiBoxcarGAENormal(TestBoxcarGAE):
             "    'http://boxcar.io/devices/providers/xxxxxxxxxxxxxxxxxxxx/notifications/subscribe',\n"
             "    headers={'User-Agent': 'Boxcar_Client'},\n"
             "    method='POST',\n"
-            "    payload='email=bc3d8c9b7e19d7ffe1eaebe272807f9b')\n")
+            "    payload='email=zzzzzzzz%40zzzz.zzzz')\n")
 
     def test_broadcast(self):
         # mock urlfetch
@@ -63,9 +63,10 @@ class TestiBoxcarGAENormal(TestBoxcarGAE):
             "    'http://boxcar.io/devices/providers/xxxxxxxxxxxxxxxxxxxx/notifications/broadcast',\n"
             "    headers={'User-Agent': 'Boxcar_Client'},\n"
             "    method='POST',\n"
-            "    payload='token=xxxxxxxxxxxxxxxxxxxx&notification%5Bmessage%5D=broadcast+message&"
+            "    payload='secret=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&"
+                         "notification%5Bmessage%5D=broadcast+message&"
                          "notification%5Bicon_url%5D=xxxxxxxxx%40xxxxx.xxx&"
-                         "secret=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&"
+                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "notification%5Bfrom_screen_name%5D=test_normal')\n")
 
     def test_notify(self):
@@ -88,8 +89,8 @@ class TestiBoxcarGAENormal(TestBoxcarGAE):
             "    method='POST',\n"
             "    payload='notification%5Bfrom_remote_service_id%5D=200&"
                          "notification%5Bicon_url%5D=xxxxxxxxx%40xxxxx.xxx&"
-                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "secret=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&"
+                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "notification%5Bmessage%5D=notification+message&"
                          "email=fd2504c1a700746932666efec57e4b92&"
                          "notification%5Bfrom_screen_name%5D=test_normal')\n")
@@ -114,7 +115,7 @@ class TestiBoxcarGAEError(TestBoxcarGAE):
             "    'http://boxcar.io/devices/providers/xxxxxxxxxxxxxxxxxxxx/notifications/subscribe',\n"
             "    headers={'User-Agent': 'Boxcar_Client'},\n"
             "    method='POST',\n"
-            "    payload='email=4d18e31a9128dacd7ccd4ab82923b119')\n")
+            "    payload='email=yyyyyyy%40zzzz.zzzz')\n")
 
     def test_incorrect_parameter(self):
         # mock urlfetch
@@ -137,8 +138,8 @@ class TestiBoxcarGAEError(TestBoxcarGAE):
             "    method='POST',\n"
             "    payload='notification%5Bfrom_remote_service_id%5D=400&"
                          "notification%5Bicon_url%5D=xxxxxxxxx%40xxxxx.xxx&"
-                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "secret=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&"
+                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "notification%5Bmessage%5D=notification+error&"
                          "email=fd2504c1a700746932666efec57e4b92&"
                          "notification%5Bfrom_screen_name%5D=test_error')\n")
@@ -164,8 +165,8 @@ class TestiBoxcarGAEError(TestBoxcarGAE):
             "    method='POST',\n"
             "    payload='notification%5Bfrom_remote_service_id%5D=401&"
                          "notification%5Bicon_url%5D=xxxxxxxxx%40xxxxx.xxx&"
-                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "secret=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&"
+                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "notification%5Bmessage%5D=notification+error&"
                          "email=fd2504c1a700746932666efec57e4b92&"
                          "notification%5Bfrom_screen_name%5D=test_error')\n")
@@ -191,8 +192,8 @@ class TestiBoxcarGAEError(TestBoxcarGAE):
             "    method='POST',\n"
             "    payload='notification%5Bfrom_remote_service_id%5D=403&"
                          "notification%5Bicon_url%5D=xxxxxxxxx%40xxxxx.xxx&"
-                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "secret=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&"
+                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "notification%5Bmessage%5D=notification+error&"
                          "email=fd2504c1a700746932666efec57e4b92&"
                          "notification%5Bfrom_screen_name%5D=test_error')\n")
@@ -218,8 +219,8 @@ class TestiBoxcarGAEError(TestBoxcarGAE):
             "    method='POST',\n"
             "    payload='notification%5Bfrom_remote_service_id%5D=500&"
                          "notification%5Bicon_url%5D=xxxxxxxxx%40xxxxx.xxx&"
-                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "secret=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&"
+                         "token=xxxxxxxxxxxxxxxxxxxx&"
                          "notification%5Bmessage%5D=unknown+error&"
                          "email=fd2504c1a700746932666efec57e4b92&"
                          "notification%5Bfrom_screen_name%5D=test_error')\n")
