@@ -1,0 +1,10 @@
+Boxcar Provider API for GAE/Python
+==================================
+
+A simple boxcar provider implementation for GoogleAppEngine/Python.
+Directly Porting from http://github.com/boxcar/Boxcar-PHP-Provider.
+And, based on the documentation from http://boxcar.io/help/api/providers
+
+See the example.py file to get started.
+
+test.py requires minimock(http://pypi.python.org/pypi/MiniMock/1.2.7).
